@@ -76,6 +76,7 @@ laboratorio-virtual-phishing/
 ├── README.md
 ├── docs/
 ├── evidencias/
+├── lab-site/
 └── images/
 ```
 
@@ -87,11 +88,103 @@ laboratorio-virtual-phishing/
 - [x] Validação da conectividade;
 - [x] Organização das evidências iniciais;
 - [x] Inicialização do repositório Git;
-- [ ] Execução da simulação educacional;
-- [ ] Registro dos resultados;
-- [ ] Documentação das medidas preventivas;
+- [x] Execução da simulação educacional;
+- [x] Registro dos resultados;
+- [x] Documentação das medidas preventivas;
 - [ ] Publicação do projeto no GitHub.
 
 ## Uso responsável
 
 Este projeto não incentiva ataques contra terceiros. Seu propósito é demonstrar, em ambiente autorizado, como o phishing funciona e como usuários e organizações podem reconhecer e evitar essa ameaça.
+
+
+## Relatório técnico completo
+
+A execução detalhada, incluindo ambiente, comandos, diagnóstico, limitações, decisões e medidas preventivas, está disponível em:
+
+- [Relatório técnico do laboratório](docs/relatorio-tecnico.md)
+- [Resultado sanitizado do Credential Harvester](evidencias/resultado-harvester-sanitizado.md)
+
+## Procedimento executado
+
+O fluxo original solicitado pela atividade foi reproduzido:
+
+1. `Social-Engineering Attacks`;
+2. `Website Attack Vectors`;
+3. `Credential Harvester Attack Method`;
+4. `Site Cloner`;
+5. IP de retorno `173.168.100.75`;
+6. URL `http://www.facebook.com`.
+
+O Facebook redirecionou a requisição para `login.facebook.com` e recusou o download automatizado com `HTTP 400`.
+
+O SEToolkit foi atualizado da versão `8.0.3` para `8.1.3`, mas o comportamento permaneceu.
+
+Para concluir a demonstração sem contornar as proteções do serviço externo, foi utilizada uma página local de treinamento, importada pelo recurso `Custom Import`.
+
+## Resultado
+
+O Credential Harvester foi iniciado na porta TCP `80`. O WINLAB11 acessou a página educacional, enviou um formulário com dados fictícios e o SEToolkit identificou corretamente os campos de usuário e senha.
+
+Após o envio, o navegador foi redirecionado para o endereço oficial do Facebook.
+
+Os valores submetidos e o relatório XML bruto não foram incluídos no repositório público.
+
+## Evidências da execução
+
+### Menu principal do SEToolkit
+
+![Menu principal do SEToolkit](images/05-menu-principal-setoolkit.png)
+
+### Seleção de Social-Engineering Attacks
+
+![Menu Social-Engineering Attacks](images/06-menu-social-engineering-attacks.png)
+
+### Seleção de Website Attack Vectors
+
+![Menu Website Attack Vectors](images/07-menu-website-attack-vectors.png)
+
+### Seleção do Credential Harvester
+
+![Menu Credential Harvester](images/08-menu-credential-harvester.png)
+
+### Configuração do IP de retorno
+
+![Configuração do IP de retorno](images/09-configuracao-ip-postback.png)
+
+### URL original informada ao Site Cloner
+
+![URL de clonagem do Facebook](images/10-url-clonagem-facebook.png)
+
+### Falha atual do Site Cloner
+
+![Falha da URL original](images/13-falha-site-cloner-url-exata.png)
+
+### SEToolkit atualizado para 8.1.3
+
+![SEToolkit atualizado](images/14-setoolkit-atualizado-8.1.3.png)
+
+### Credential Harvester executando na porta 80
+
+![Credential Harvester ativo](images/15-credential-harvester-porta-80.png)
+
+### Página educacional no WINLAB11
+
+![Página de treinamento](images/16-pagina-treinamento-no-winlab11.png)
+
+### Redirecionamento para o Facebook oficial
+
+![Redirecionamento oficial](images/17-redirecionamento-facebook-oficial.png)
+
+## Principais aprendizados
+
+- funcionamento do Credential Harvester;
+- diferença entre requisições GET e POST;
+- função do endereço de retorno;
+- importância da porta TCP `80`;
+- limitações de ferramentas diante de páginas modernas;
+- necessidade de validar mensagens genéricas de erro;
+- importância de atualizar as ferramentas;
+- uso de Git para documentar decisões técnicas;
+- tratamento responsável de dados capturados;
+- necessidade de autorização formal em testes de segurança.

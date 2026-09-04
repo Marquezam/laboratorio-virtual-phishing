@@ -6,7 +6,7 @@
 - **Formação:** Cibersegurança — DIO
 - **Responsável:** Marquezam Xavier Marques
 - **Data de execução:** 04 de setembro de 2026
-**Finalidade:** exclusivamente educacional e autorizada
+- **Finalidade:** exclusivamente educacional e autorizada
 
 ---
 

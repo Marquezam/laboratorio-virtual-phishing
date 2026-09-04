@@ -91,7 +91,7 @@ laboratorio-virtual-phishing/
 - [x] Execução da simulação educacional;
 - [x] Registro dos resultados;
 - [x] Documentação das medidas preventivas;
-- [ ] Publicação do projeto no GitHub.
+- [x] Publicação do projeto no GitHub.
 
 ## Uso responsável
 
